@@ -11,7 +11,7 @@ A small Cypress test suite against [Saucedemo](https://www.saucedemo.com). The s
 ## Setup
 
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/syeda-tabassum-rahaman/cypress-saucedemo-qa-task.git
 cd cypress-task
 npm install
 ```
