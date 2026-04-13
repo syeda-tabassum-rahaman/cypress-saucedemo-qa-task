@@ -12,7 +12,7 @@ A small Cypress test suite against [Saucedemo](https://www.saucedemo.com). The s
 
 ```bash
 git clone https://github.com/syeda-tabassum-rahaman/cypress-saucedemo-qa-task.git
-cd cypress-task
+cd cypress-saucedemo-qa-task
 npm install
 ```
 
@@ -28,14 +28,15 @@ npm test             # Full suite, headless
 
 ## Test strategy
 
-I treated test selection as a **risk-based budgeting exercise**: with only 4 tests, each one had to cover a risk no other test covered.
 
-| # | Test | Suite | Risk it protects |
-|---|------|-------|------------------|
-| 1 | Valid login | Smoke | Authentication broken → app unusable |
-| 2 | Locked-out user | Smoke | Security/error-handling regression |
-| 3 | Sort by price (both directions) | Smoke | Core business logic |
-| 4 | Full purchase (end-to-end) | Regression | Revenue path broken |
+I treated test selection as a risk-based budgeting exercise: with only 4 tests, each one needed to protect a different risk area.
+
+| Test Case | Suite | Risk Protected |
+|---|---|---|
+| Valid login | Smoke | Authentication failure makes the app unusable |
+| Locked-out user | Smoke | Negative path and access-control behavior regressions |
+| Sort by price | Smoke / functional smoke | Inventory interaction and visible ordering behavior |
+| Full purchase flow | Regression / E2E | Core purchase journey broken across multiple steps |
 
 **Smoke** = fast liveness checks, run on every build.
 **Regression** = deeper user journeys, run on a slower cadence.
